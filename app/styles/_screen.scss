@@ -1,0 +1,357 @@
+// out: screen.css, compress: true, sourceMap: true
+
+@import 'fonts.css';
+// Color variables (appears count calculates by raw css)
+$color0: #ffffff;
+$dark_fon: #3f4049;
+$ligth_fon: #f7f7f7;
+$green: #38c695;
+$purple:#b27cf5;
+$orange:#feb960;;
+$red: #fc5f45;
+// Height variables (appears count calculates by raw css)
+$height1: 70px; // Appears 2 times
+
+h1 {
+	color: $color0;
+	font-family: 'Libre Baskerville';
+	font-size: 60px;
+	font-style: normal;
+	font-weight: 400;
+	line-height:60px;
+	padding: 70px;
+	text-align: center;
+	margin: 0;
+	 @media (max-width: 992px) {
+		font-size: 40px;
+		line-height:45px;
+	 }
+}
+h2 {
+	font-family: 'Libre Baskerville';
+	font-size: 50px;
+	font-style: normal;
+	font-weight: 700;
+	text-align: center;
+	color: #313131;
+	margin: 0;
+	@media (max-width: 992px) {
+		font-size: 40px;
+		line-height:45px;
+	}
+}
+h3 {
+	font-family: 'Poppins';
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	text-align: center;
+	color: #313131;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	margin: 0;
+}
+p {
+	font-family: 'Poppins';
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 500;
+	line-height:25px;
+	text-align: center;
+	color: #616161;
+	padding-top: 50px;
+	padding-bottom: 75px;
+	margin: 0;
+}
+.motto {
+	font-family: 'Poppins';
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 500;
+	line-height:28px;
+	text-align: center;
+	color: #616161;
+}
+.container_menu {
+	margin: 0 auto;
+	max-width: 1100px;
+	position: relative;
+}
+.container {
+	margin: 0 auto;
+	padding-top: 90px;
+	padding-bottom: 90px;
+	max-width: 1100px;
+
+}
+.light_fon{
+	background: $ligth_fon;
+}
+.dark_fon{
+	background: $dark_fon;
+}
+
+.menu {
+	height: $height1;
+	&__ul {
+		position: absolute;
+		right: 0;
+		top: 35%;
+	}
+	&__logo {
+		position: absolute;
+		left: 0;
+		top: 25%;
+	}
+	&__list {
+		margin: 0;
+	}
+	&__list_a {
+		display: inline;
+		font-size: 14px;
+		margin-right: 5px;
+		padding: 3px;
+	}
+	&__list_a__link {
+		color: #272727;
+		font-family: 'Poppins';
+		font-weight: 500;
+		text-decoration: none;
+		&:hover {
+			color: $dark_fon;
+			text-decoration: none;
+		}
+	}
+}
+
+
+.logo {
+	background: $dark_fon;
+	min-height: $height1;
+	&__button {
+		display: flex;
+		justify-content: space-around;
+	}
+	&__forcolor {
+		display: flex;
+		justify-content: space-around;
+		padding-top: 50px;
+		&__one {
+			font-family: 'Poppins';
+			font-size: 18px;
+			font-weight: Regular;
+			text-align: center;
+			padding: 25px 0;
+			margin: 0 15px 30px 15px;
+			width: 250px;
+			&_p {
+				padding-top: 20px;
+				padding-bottom: 0;
+			}
+			&_green {
+				color: #38c695;
+			}
+			&_purple {
+				color: #b27cf5;
+			}
+			&_orange {
+				color: #feb960;
+			}
+		}
+	}
+	@media (max-width: 768px){
+		&__forcolor{
+			display: block;
+			margin: 0 auto;
+			max-width: 280px;
+		}
+	}
+}
+
+
+
+.button {
+	background-color: #fc5f45;
+	border-radius: 50px;
+	border: none;
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+}
+
+.about-us {
+	height: 700px;
+	width: 1000px;
+	margin: 0 auto;
+	position: relative;
+	&__img {
+		width: 500px;
+		height: 700px;
+		background: #cccccc;
+		background: linear-gradient( to bottom, #cccccc, #d9aca5);
+		border: 10px solid transparent;
+		border-image: linear-gradient(to bottom, #a3a3a3, #ae8a83 );
+		border-image-slice: 1;
+		display:inline-block;
+		position: absolute;
+	}
+	&__bottom {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		font-size: 0;
+		&-item {
+			display: inline-block;
+			width: 25%;
+			height: 5px;
+			&_red {
+				background: $red;
+			}
+			&_green {
+				background: $green;
+			}
+			&_purple {
+				background: $purple;
+			}
+			&_orange {
+				background: $orange;
+			}
+		}
+	}
+	&__article {
+		width: 600px;
+		height: 480px;
+		display: inline-block;
+		position: absolute;
+		left: 390px;
+		top: 100px;
+		background: #ffffff;
+		box-shadow: 0 0 20px rgba(0,0,0,0.5);
+		&_h2 {
+			padding-top: 50px;
+			padding-left: 40px;
+			text-align: left;
+		}
+		&_p {
+			padding: 40px;
+			text-align: left;
+		}
+	}
+	@media (max-width: 1200px) {
+		height: 500px;
+		width: 840px;
+		&__img {
+			width: 400px;
+			height: 500px;
+		}
+		&__article{
+			width: 500px;
+			height: 380px;
+			left: 320px;
+			top: 50px;
+			&_h2 {
+				font-size: 30px;
+				padding-top: 30px;
+				padding-left: 40px;
+				text-align: left;
+			}
+			&_p {
+				font-size: 14px;
+				line-height:21px;
+				padding:30px 40px 40px 40px;
+				text-align: left;
+			}
+		}
+	}
+}
+
+
+.our-focus{
+	&__object {
+		min-width: 250px;
+		max-width: 350px;
+		height:350px ;
+		background: #ffffff;
+		padding: 60px 30px ;
+		margin: 0 auto;
+		margin-bottom: 30px;
+		text-align: center;
+		&_red {
+			border-bottom: 4px solid $red;
+		}
+		&_green {
+			border-bottom: 4px solid $green
+		}
+		&_purple {
+			border-bottom: 4px solid $purple;
+		}
+		&_orange {
+			border-bottom: 4px solid $orange;
+		}
+	}
+}
+
+
+.fullscreen-bg {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding-top:45%;
+	margin: 0 auto;
+	@media (max-width: 767px) {
+        background: url('C:/start/app/images/Layer 24.jpg') center center / cover no-repeat;
+}
+	.overlay {
+		background: rgba(0,0,0,0.6);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	
+		h2{
+			padding-top: 15%;
+			padding-bottom: 20px;
+			font-size: 30px;
+			color: #ffffff;
+			top: 30px;
+		}
+		p{
+			padding-top: 20px;
+			padding-bottom: 15%;
+			color: #ffffff;
+		}
+	
+		.play{
+			display: block;
+			margin: 0 auto;
+			background: transparent url('../images/alexis-homepage_19.png') center no-repeat; /*Это файл картинки*/
+			height: 80px;
+			border: none;
+			outline: none;
+			width: 80px;
+		}
+	}
+
+		
+
+	&__video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		@media (max-width: 767px){
+			display: none;
+		}
+	}
+}
+ 
