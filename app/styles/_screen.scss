@@ -306,9 +306,9 @@ p {
     width: 100%;
     padding-top:45%;
 	margin: 0 auto;
-	@media (max-width: 767px) {
-        background: url('C:/start/app/images/Layer 24.jpg') center center / cover no-repeat;
-}
+		@media (max-width: 767px) {
+			background: url('../images/Layer 24.jpg') center center / cover no-repeat;
+	}
 	.overlay {
 		background: rgba(0,0,0,0.6);
 		position: absolute;
@@ -320,13 +320,13 @@ p {
 	
 		h2{
 			padding-top: 15%;
-			padding-bottom: 20px;
+			padding-bottom: 50px;
 			font-size: 30px;
 			color: #ffffff;
 			top: 30px;
 		}
 		p{
-			padding-top: 20px;
+			padding-top: 50px;
 			padding-bottom: 15%;
 			color: #ffffff;
 		}
@@ -341,9 +341,6 @@ p {
 			width: 80px;
 		}
 	}
-
-		
-
 	&__video {
 		position: absolute;
 		top: 0;
