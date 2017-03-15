@@ -9,8 +9,7 @@ $green: #38c695;
 $purple:#b27cf5;
 $orange:#feb960;;
 $red: #fc5f45;
-// Height variables (appears count calculates by raw css)
-$height1: 70px; // Appears 2 times
+$heigth1:70px;
 
 h1 {
 	color: $color0;
@@ -19,13 +18,20 @@ h1 {
 	font-style: normal;
 	font-weight: 400;
 	line-height:60px;
-	padding: 70px;
+	padding: 30px;
 	text-align: center;
 	margin: 0;
-	 @media (max-width: 992px) {
-		font-size: 40px;
-		line-height:45px;
-	 }
+		@media (max-width: 992px) {
+			font-size: 40px;
+			line-height:40px;
+			padding: 20px; 
+		}
+		@media (max-width: 768px) {
+			font-size: 30px;
+			line-height:30px;
+			padding: 20px;	
+		}
+
 }
 h2 {
 	font-family: 'Libre Baskerville';
@@ -50,6 +56,10 @@ h3 {
 	padding-top: 25px;
 	padding-bottom: 25px;
 	margin: 0;
+	@media (max-width: 768px) {
+		font-size: 15px;
+		line-height:15px;
+	}
 }
 p {
 	font-family: 'Poppins';
@@ -71,6 +81,18 @@ p {
 	line-height:28px;
 	text-align: center;
 	color: #616161;
+		@media (max-width: 992px) {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+		@media (max-width: 768px) {
+			padding-top: 30px;
+			padding-bottom: 30px;	
+		}
+		@media (max-width: 480px) {
+			padding-top: 20px;
+			padding-bottom: 20px;	
+		}
 }
 .container_menu {
 	margin: 0 auto;
@@ -82,7 +104,18 @@ p {
 	padding-top: 90px;
 	padding-bottom: 90px;
 	max-width: 1100px;
-
+		@media (max-width: 992px) {
+			padding-top: 60px;
+			padding-bottom: 60px;
+		}
+		@media (max-width: 768px) {
+			padding-top: 30px;
+			padding-bottom: 30px;	
+		}
+		@media (max-width: 480px) {
+			padding-top: 20px;
+			padding-bottom: 20px;	
+		}
 }
 .light_fon{
 	background: $ligth_fon;
@@ -92,7 +125,7 @@ p {
 }
 
 .menu {
-	height: $height1;
+	height: 70px;
 	&__ul {
 		position: absolute;
 		right: 0;
@@ -127,7 +160,7 @@ p {
 
 .logo {
 	background: $dark_fon;
-	min-height: $height1;
+	min-height: 70px;
 	&__button {
 		display: flex;
 		justify-content: space-around;
@@ -141,8 +174,8 @@ p {
 			font-size: 18px;
 			font-weight: Regular;
 			text-align: center;
-			padding: 25px 0;
-			margin: 0 15px 30px 15px;
+			padding-top: 25px;
+			margin: 0 15px ;
 			width: 250px;
 			&_p {
 				padding-top: 20px;
@@ -159,11 +192,21 @@ p {
 			}
 		}
 	}
-	@media (max-width: 768px){
+	@media (max-width: 480px){
 		&__forcolor{
+			padding-top: 20px;
 			display: block;
 			margin: 0 auto;
 			max-width: 280px;
+			&__one{
+				padding: 5px;
+				margin-bottom: 15px;
+			}
+			p {
+				font-size: 12px;
+				padding:10px;
+				margin:0;
+			}
 		}
 	}
 }
@@ -270,6 +313,15 @@ p {
 			}
 		}
 	}
+	@media (max-width: 992px){
+		display: none;
+	}
+}
+.article_min{
+
+	@media (min-width: 992px){
+		display: none;
+	}
 }
 
 
@@ -283,6 +335,17 @@ p {
 		margin: 0 auto;
 		margin-bottom: 30px;
 		text-align: center;
+		@media (max-width: 768px) {
+			padding: 30px 15px ;
+			margin-bottom: 15px;
+			min-width: 170px;
+			height:250px ;
+			p{
+				font-size: 10px;
+				padding-top: 10px;
+				line-height:20px;
+			}
+		}
 		&_red {
 			border-bottom: 4px solid $red;
 		}
@@ -307,9 +370,11 @@ p {
     padding-top:45%;
 	margin: 0 auto;
 		@media (max-width: 767px) {
-			background: url('../images/Layer 24.jpg') center center / cover no-repeat;
+			display: none;
 	}
+
 	.overlay {
+		
 		background: rgba(0,0,0,0.6);
 		position: absolute;
 		top: 0;
@@ -317,28 +382,50 @@ p {
 		width: 100%;
 		height: 100%;
 		z-index: 1;
-	
-		h2{
-			padding-top: 15%;
-			padding-bottom: 50px;
-			font-size: 30px;
-			color: #ffffff;
-			top: 30px;
-		}
-		p{
-			padding-top: 50px;
-			padding-bottom: 15%;
-			color: #ffffff;
-		}
-	
-		.play{
-			display: block;
-			margin: 0 auto;
-			background: transparent url('../images/alexis-homepage_19.png') center no-repeat; /*Это файл картинки*/
-			height: 80px;
-			border: none;
-			outline: none;
-			width: 80px;
+
+		&__center{
+			opacity: 0.5;
+			height: 240px;
+			position: absolute;
+			top:0;
+			bottom: 0;
+			left: 30%;
+			right: 30%;
+			margin:auto 0;
+			@media (max-width: 1100px){
+				height: 200px;
+				}
+
+				h2{
+				padding-top:0;
+				padding-bottom: 50px;
+				font-size: 30px;
+				color: #ffffff;
+			
+				@media (max-width: 1100px){
+					font-size: 20px;
+					padding-bottom: 30px;
+				}
+				}
+				p{
+					padding-top: 50px;
+					padding-bottom: 0;
+					color: #ffffff;
+						@media (max-width: 1100px){
+					font-size: 10px;
+					padding-top: 30px;
+				}
+				}
+				.play{
+					display: block;
+					margin: 0 auto;
+					background: transparent url('../images/alexis-homepage_19.png') center no-repeat; /*Это файл картинки*/
+					height: 80px;
+					border: none;
+					outline: none;
+					width: 80px;
+				}
+				
 		}
 	}
 	&__video {
@@ -346,9 +433,6 @@ p {
 		top: 0;
 		left: 0;
 		width: 100%;
-		@media (max-width: 767px){
-			display: none;
-		}
 	}
 }
- 
+
