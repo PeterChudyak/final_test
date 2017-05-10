@@ -11,6 +11,10 @@ $orange:#feb960;;
 $red: #fc5f45;
 $heigth1:70px;
 
+.page{
+	color: green;
+}
+
 h1 {
 	color: $color0;
 	font-family: 'Libre Baskerville';
@@ -29,7 +33,8 @@ h1 {
 		@media (max-width: 768px) {
 			font-size: 30px;
 			line-height:30px;
-			padding: 20px;	
+			padding: 20px;
+			padding-bottom: 30px;	
 		}
 
 }
@@ -73,6 +78,9 @@ p {
 	padding-bottom: 75px;
 	margin: 0;
 }
+a:hover{
+	text-decoration: none;
+}
 .motto {
 	font-family: 'Poppins';
 	font-size: 18px;
@@ -97,7 +105,10 @@ p {
 .container_menu {
 	margin: 0 auto;
 	max-width: 1100px;
-	position: relative;
+	padding: 0 70px;
+		@media (max-width: 992px) {
+			padding: 0 50px;
+		}
 }
 .container {
 	margin: 0 auto;
@@ -124,38 +135,161 @@ p {
 	background: $dark_fon;
 }
 
-.menu {
+
+header{
+	position: relative;
+	position: fixed;
+	z-index: 2;
+	width: 100%;
 	height: 70px;
-	&__ul {
-		position: absolute;
-		right: 0;
-		top: 35%;
+	background: #ffffff;
+	.logo-box {
+		float: left;
+		margin-right: 50px;
+		img {
+			display: block;
+			padding-top: 16px;
+		}
 	}
-	&__logo {
-		position: absolute;
-		left: 0;
-		top: 25%;
+	.menu_button{
+		display: none;
+		float: right;
+
 	}
-	&__list {
-		margin: 0;
+	nav {
+		overflow: hidden;
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			float: right;
+			li {
+				display: inline-block;
+				margin-left: 10px;
+				height: 70px;
+				font-family: 'Poppins';
+				font-weight: 500;
+				line-height: 70px;
+				a {
+					text-decoration: none;
+					display: block;
+					color: #272727;
+					
+					
+					&:hover {
+						color: #fc5f45;
+						text-decoration: none;
+					}
+					&:active {
+						color: #fc5f45;
+						text-decoration: none;
+					}
+				}
+			}
+		}
 	}
-	&__list_a {
-		display: inline;
-		font-size: 14px;
-		margin-right: 5px;
-		padding: 3px;
+	@media (max-width: 992px){
+		.menu_button{
+		display: block;
+		padding-top: 15px;
+		
+		&__btn{
+			width: 40px;
+			height: 30px;
+			border: none;
+			background: transparent;
+			font-size: 30px;
+			&:hover{
+				color: $red;
+			}
+			&:active{
+				border: none;
+				background: transparent;
+			}
+		}
+		&__list{
+			background: rgba(0,0,0,0.8);
+			left: -300%;
+			right: 0;
+			top: 70px;
+			width: 100px;
+			padding: 0;
+			&_none{
+				display: none;
+			}
+				li{
+					text-align: center;
+					&:hover{
+						background: #a3a3a3;
+					}
+					
+					a{
+						color: #ffffff;
+					&:hover{
+						color: #272727;
+						}
+					}
+				}
+			} 
+		}
+		nav {
+			ul{
+				padding-right: 40px;
+				.menu__list_none{
+					display: none;
+				}
+			}
+			/*ul{
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				position: absolute;
+				display: block;
+				width: 100%;
+				background: rgba(0,0,0,0.6);
+				left: 0;
+				text-align: center;
+				top: 70px;
+				li {
+					display: block;
+					margin-left: 0;
+					font-family: 'Poppins';
+					font-weight: 500;
+					line-height: 40px;
+					height: 40px;
+					&:hover{
+						background: #a3a3a3;
+					}
+					
+					a{
+						color: #ffffff;
+					&:hover{
+						color: #272727;
+					}
+					}
+				}
+			}*/
+		}
 	}
-	&__list_a__link {
-		color: #272727;
-		font-family: 'Poppins';
-		font-weight: 500;
-		text-decoration: none;
-		&:hover {
-			color: $dark_fon;
-			text-decoration: none;
+	@media (max-width: 768px){
+		.logo-box{
+			margin-right: 20px;
+		}
+		.menu_button{
+		&__list{
+			&_none{
+				display: block;
+				}
+			} 
+		}
+		nav {
+			display: none;
 		}
 	}
 }
+
+
+
 
 
 .logo {
@@ -192,6 +326,14 @@ p {
 			}
 		}
 	}
+	@media (max-width: 768px){
+		&__forcolor {
+			padding-top: 30px;
+			&__one_p {
+				font-size: 12px;
+			}
+		}
+	}
 	@media (max-width: 480px){
 		&__forcolor{
 			padding-top: 20px;
@@ -209,6 +351,7 @@ p {
 			}
 		}
 	}
+	
 }
 
 
@@ -369,12 +512,14 @@ p {
     width: 100%;
     padding-top:45%;
 	margin: 0 auto;
-		@media (max-width: 767px) {
-			display: none;
-	}
+	&__video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		}
 
 	.overlay {
-		
 		background: rgba(0,0,0,0.6);
 		position: absolute;
 		top: 0;
@@ -392,29 +537,16 @@ p {
 			left: 30%;
 			right: 30%;
 			margin:auto 0;
-			@media (max-width: 1100px){
-				height: 200px;
-				}
-
 				h2{
 				padding-top:0;
 				padding-bottom: 50px;
 				font-size: 30px;
 				color: #ffffff;
-			
-				@media (max-width: 1100px){
-					font-size: 20px;
-					padding-bottom: 30px;
-				}
 				}
 				p{
 					padding-top: 50px;
 					padding-bottom: 0;
 					color: #ffffff;
-						@media (max-width: 1100px){
-					font-size: 10px;
-					padding-top: 30px;
-				}
 				}
 				.play{
 					display: block;
@@ -428,11 +560,404 @@ p {
 				
 		}
 	}
-	&__video {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
+	@media (max-width: 1100px){
+		.overlay{
+			&__center{
+				height: 200px;
+				h2{
+					font-size: 20px;
+					padding-bottom: 30px;
+				}
+				p{
+					font-size: 10px;
+					padding-top: 30px;
+				}
+			}
+		}
+	}
+	@media (max-width: 768px) {
+			display: none;
+		}
+}
+.portfolio{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 100%;
+	&__table{
+		width: 320px;
+		margin-bottom: 20px;
+		position: relative;
+		border: 3px solid #ffffff;
+		
+		
+		img{
+			width: 100%;
+		}
+		&__hover{
+			width: 100%;
+			position:absolute;
+			left:0;
+			bottom:0;
+			right:0;
+			top:0;
+			background:rgba(0,0,0, 0.5);
+			box-shadow: 0 0 7px rgba(0,0,0,0.3);
+			display: none;
+			&_image{
+				height: 70%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				a{
+					width: 20%;
+					img:hover{
+					transform: scale(1.2);
+				}
+			}
+			}
+			
+			&_top{
+				width: 100%;
+				font-size: 0;
+				&_item {
+					display: inline-block;
+					width: 25%;
+					height: 3px;
+					&_red {
+						background: $red;
+					}
+					&_green {
+						background: $green;
+					}
+					&_purple {
+						background: $purple;
+					}
+					&_orange {
+						background: $orange;
+					}
+				}
+			}
+			&_content{
+				background: #ffffff;
+				height: 29%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				p{
+					padding-top: 0;
+					padding-bottom: 0;
+					&:hover{
+						color: #fc5f45;
+					}
+				}
+			}
+
+			
+		}
+		
+		&:hover .portfolio__table__hover{
+			display: block;
+		}
+		
+	}
+	@media (max-width: 768px) {
+			&__table{
+				width: 220px;
+			}
+		}
+	
+}
+.our-team{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	&__table {
+		background: #ffffff;
+		padding: 5px;
+		width: 23%;
+		border-bottom: 3px solid;
+		position: relative;
+		&_for768{
+			display: none;
+		}
+		&_for480 {
+			display: none;
+		}
+		&_ava{
+			img{
+				width: 100%;
+				height: auto;
+			}
+			&_icon{
+				display: none;
+				}
+			}
+			
+			h3{
+				padding-bottom: 10px;
+			}
+			p{
+				padding-top: 0;
+				padding-bottom: 8px;
+				font-size: 13px;
+				
+			}
+			&_red{
+				color: $red;
+				border-color: $red;
+				&::after {
+				content: ''; 
+				position: absolute; /* Абсолютное позиционирование */
+				left:35%;
+				bottom: -40px; /* Положение треугольника */
+				border: 35px solid transparent; /* Прозрачные границы */
+				border-bottom: 35px solid #ffffff; /* Добавляем треугольник */
+				display: none;
+				}
+			}
+			&_green{
+				color: $green;
+				border-color: $green;
+				&::after {
+				content: ''; 
+				position: absolute; /* Абсолютное позиционирование */
+				left:35%;
+				bottom: -40px; /* Положение треугольника */
+				border: 35px solid transparent; /* Прозрачные границы */
+				border-bottom: 35px solid #ffffff; /* Добавляем треугольник */
+				display: none;
+				}
+			}
+			&_purple {
+				color: $purple;
+				border-color: $purple;
+				&::after {
+				content: ''; 
+				position: absolute; /* Абсолютное позиционирование */
+				left:35%;
+				bottom: -40px; /* Положение треугольника */
+				border: 35px solid transparent; /* Прозрачные границы */
+				border-bottom: 35px solid #ffffff; /* Добавляем треугольник */
+				display: none;
+				}
+			}
+			&_orange{
+				color: $orange;
+				border-color: $orange;
+				&::after {
+				content: ''; 
+				position: absolute; /* Абсолютное позиционирование */
+				left:35%;
+				bottom: -40px; /* Положение треугольника */
+				border: 35px solid transparent; /* Прозрачные границы */
+				border-bottom: 35px solid #ffffff; /* Добавляем треугольник */
+				display: none;
+				}
+			}
+	}
+	@media (max-width: 992px){
+		 
+		 &__table{
+			width: 170px;
+			margin: 0;
+			margin-bottom: 30px;
+			
+			h3{
+				font-size: 15px;
+			}
+		}
+	}
+	@media (max-width: 768px){
+		flex-wrap: wrap;
+		justify-content: space-around;
+		&__table{
+			width: 100%;
+			height: 50%;
+			padding: 0;
+			&_for768{
+				display: block;
+			}
+				&_ava{
+					display: inline-block;
+					width:30%;
+					margin: 10px;
+					margin-top: 23px;
+					vertical-align: top;
+					&_icon{
+						display: block;
+						width: 175px;
+						margin: auto;
+						margin-top: 25px;
+						a{
+							margin: 0 10px;
+							img{
+								width: 20px;
+							}
+						}
+				}
+			}
+			&_inline{
+				width: 60%;
+				display: inline-block;
+				vertical-align: top;
+				margin-top: 25px;
+			}
+			p{
+				text-align: left;
+				
+			}
+			h3{
+				text-align: left;
+				padding: 0;
+			}
+			
+		}
+	}
+	@media (max-width: 680px){
+		&__table{
+			border: none;
+			&_for768{
+				display: none;
+			}
+			&_ava{
+				margin: 5px;
+				vertical-align: middle;
+				&_icon{
+					display: none;
+				}
+			}
+			&_inline{
+				
+				display: inline-block;
+				vertical-align: middle;
+				
+			}
+			p{
+				text-align: center;
+				
+			}
+			h3{
+				font-size: 15px;
+				text-align: center;
+				padding-bottom: 10px;
+			}
+			&_for480{
+				display: block;
+				 
+				
+				&_button{
+					width: 100%;
+					height: 35px;
+					background: #313131;
+					outline: none;
+					border: none;
+				}
+				&_text{
+					display: none;
+					border-bottom: 3px solid;
+					p{
+						text-align: center;
+						padding: 20px;
+					}
+				}
+			}
+		}
+	}
+	
+}
+.about-team{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: #ffffff;
+	margin: 30px 0;
+	padding: 70px;
+	&__text{
+		width: 70%;
+		h3{
+			padding: 0;
+			text-align: left;
+		}
+		p{
+			padding:0;
+			padding-top: 30px;
+			text-align: left;
+		}
+	}
+	&__social {
+		display: flex;
+		justify-content: center;
+		height: 150px;
+		margin-top: 40px;
+		&_img{
+			display: flex;
+			align-items: center;
+			width: 80px;
+			border-right: 2px solid #3f4049;
+		}
+		&_icon{
+			display: flex;
+			align-items: center;
+			ul{
+				list-style-type: none;
+				li{
+					a{
+						color: #616161;
+						&:hover{
+							color: #fc5f45;
+						}
+						img{
+							vertical-align: middle;
+						}
+						span{
+							vertical-align: middle;
+						}
+					}
+				}
+			}
+		}
+	}
+	&_michael{
+		
+	} 
+	&_david{
+		display: none;		
+	} 
+	&_anna{
+		display: none;
+	} 
+	&_jason{
+		display: none;
+	}
+	@media (max-width: 992px){
+		margin: 0;
+		padding: 30px;
+		&__text{
+			width: 70%;
+			h3{
+				font-size: 15px;
+				padding: 0;
+				
+			}
+			p{
+				font-size: 13px;
+				padding:0;
+				padding-top: 20px;
+			}
+		}
+		&__social {
+			&_img{
+				padding-left: 20px;
+			}
+			&_icon{
+				ul{
+					padding-left: 20px;
+				}
+			}
+		}
+	}
+	@media (max-width: 768px){
+		display: none;
 	}
 }
-
